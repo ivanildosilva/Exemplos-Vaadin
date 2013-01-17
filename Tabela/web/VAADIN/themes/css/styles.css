@@ -1,0 +1,305 @@
+/* 
+    Document   : styles
+    Created on : 11/06/2012, 08:16:20
+    Author     : ivanildofilho
+    Description:
+        Purpose of the stylesheet follows.
+*/
+@import "../runo/styles.css";
+
+.v-select-optiongroup .v-select-option {
+  display: inline-block;
+  white-space: nowrap;
+}
+.v-table-resizer {
+  display: block;
+  height: 1.2em;
+  float: right;
+  background: aqua;	
+  cursor: e-resize;	/* Opera does not support col-resize, so use e-resize instead */
+  cursor: col-resize;	
+  width: 1px;
+  overflow: hidden;
+}
+.v-button {
+  padding: 2px;
+  border: #aaa;
+  background: burlywood;
+}
+/*.v-table-generated-row {
+  color: #393a3c;
+  font-size: 15px;
+  padding: 9px 2px 9px 0;
+  text-shadow: #ffffff 0 1px 0;
+  background: #e7e9ea;
+}
+.v-table-header-wrap {
+	overflow: hidden;
+	border: 1px solid #aaa;
+	border-bottom: none;
+	background: #54f016;
+}*/
+.v-table .v-selected {
+	background: #54f016;
+	color: aqua;
+}
+.v-panel,
+.v-panel-caption,
+.v-panel-content,
+.v-panel-deco,
+.v-panel-light,
+.v-panel-caption-light,
+.v-panel-content-light,
+.v-panel-deco-light {
+	outline: none; /* Prevent selection outline which might break layouts or cause scrollbars */
+	text-align: left /* Force default alignment */
+}
+.v-panel-caption .v-errorindicator {
+	float: none;
+	display: inline;
+}
+.v-panel-caption .v-icon {
+	display: inline;
+	vertical-align: middle;
+}
+.v-panel-caption span {
+	vertical-align: middle;
+}
+.v-panel-caption {
+	white-space: nowrap;
+	overflow:hidden;
+	font-weight: bold;
+}
+.v-panel-nocaption {
+	overflow: hidden;
+}
+.v-panel-content {
+}
+.v-panel-deco {
+}
+.v-table {
+	overflow: hidden;
+	text-align: left; /* Force default alignment */
+}
+.v-ie7 .v-table {
+	overflow: visible;
+}
+.v-table-header-wrap {
+	overflow: hidden;
+	border: 1px solid #aaa;
+	border-bottom: none;
+	background: #ed0c0c;
+}
+.v-table-header table,
+.v-table-table {
+	border-spacing: 0;
+	border-collapse: separate;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+.v-table-header td {
+	padding: 0;
+}
+.v-table-header-cell,
+.v-table-header-cell-asc,
+.v-table-header-cell-desc {
+	cursor: pointer;
+}
+
+.v-table.v-disabled .v-table-header-cell,
+.v-table.v-disabled .v-table-header-cell-asc,
+.v-table.v-disabled .v-table-header-cell-desc {
+	cursor: default;
+}
+
+.v-table-footer-wrap {
+	overflow: hidden;
+	border: 1px solid #ed0c0c;
+	border-top: none;
+	background: #efefef;
+}
+.v-table-footer table {
+	border-spacing: 0;
+	border-collapse: collapse;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+.v-table-footer td {
+	padding: 0;
+	border-right: 1px solid #ed0c0c;
+}
+.v-table-footer-cell {
+	cursor: pointer;
+}
+.v-table-footer-container {	
+	float:right;	
+	padding-right:6px;
+	overflow:hidden;
+	white-space:nowrap;
+}
+.v-table-resizer {
+	display: block;
+	height: 1.2em;
+	float: right;
+	background: #ed0c0c;	
+	cursor: e-resize;	/* Opera does not support col-resize, so use e-resize instead */
+	cursor: col-resize;	
+	width: 1px;
+	overflow: hidden;
+}
+.v-table.v-disabled .v-table-resizer {
+	cursor: default;	
+}
+.v-table-caption-container {
+	overflow: hidden;
+	white-space: nowrap;
+	margin-left: 6px;
+}
+.v-ie7 .v-table-caption-container-align-right {
+	margin-left: 0px;
+	padding-left: 6px;
+}
+.v-table-caption-container-align-right {
+	float: right;
+}
+.v-table-sort-indicator {
+	width: 0px;
+	height: 1.2em;
+	float: right;
+}
+.v-table-header-cell-asc .v-table-sort-indicator,
+.v-table-header-cell-desc .v-table-sort-indicator {
+	width: 16px;
+	height: 1.2em;
+	float: right;
+}		
+.v-table-header-cell-asc .v-table-sort-indicator {
+	background: transparent url(../base/common/img/sprites.png) no-repeat right 6px;
+}
+.v-table-header-cell-desc .v-table-sort-indicator {
+	background: transparent url(../base/common/img/sprites.png) no-repeat right -10px;
+}
+.v-table-caption-container-align-center {
+	text-align: center;
+}
+.v-table-caption-container-align-right {
+	text-align: right;
+}
+.v-table-caption-container .v-icon,
+.v-table-header-drag .v-icon {
+	vertical-align: middle;
+}
+.v-table-body {
+	border: 1px solid bisque;
+}
+.v-table-row-spacer {
+	height: 10px;
+	overflow: hidden; /* IE hack to allow < one line height divs */
+}
+.v-table-row,
+.v-table-row-odd {
+    background: #ed0c0c;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+}
+
+.v-table-generated-row {
+	   background: #ed0c0c;
+}
+
+.v-table-body-noselection .v-table-row,
+.v-table-body-noselection .v-table-row-odd {
+	cursor: default;
+}
+.v-table .v-selected {
+	background: #ed0c0c;
+	color: #ed0c0c;
+}
+.v-table-cell-content {
+	white-space: nowrap;
+	overflow: hidden;
+	padding: 0 6px;
+	border-right: 1px solid #ed0c0c;
+}
+.v-table-cell-wrapper {
+	/* Do not specify any margins, paddings or borders here */
+	white-space: nowrap;
+	overflow: hidden;
+}
+.v-table-cell-wrapper-align-center {
+	text-align: center;
+}
+.v-table-cell-wrapper-align-right {
+	text-align: right;
+}
+.v-table-column-selector {
+	float: right;
+	background: transparent url(../base/common/img/sprites.png) no-repeat 4px -37px;
+	margin: -1.2em 0 0 0;
+	height: 1.2em;
+	width: 14px;
+	position: relative; /* hide this from IE, it works without it */
+	cursor: pointer;
+}
+.v-table.v-disabled .v-table-column-selector {
+	cursor: default;
+}
+.v-ie6 .v-table-column-selector,
+.v-ie7 .v-table-column-selector {
+	position: static;
+}
+.v-table-focus-slot-left {
+	border-left: 2px solid #999;
+	float: none;
+	margin-bottom: -1.2em;
+	width: auto;
+	background: transparent;
+	border-right: 1px solid #aaa;
+}
+.v-table-focus-slot-right {
+	border-right: 2px solid #999;
+	margin-left: -2px;
+}
+.v-table-header-drag {
+	position: absolute;
+	background: #efefef;
+	border: 1px solid #eee;
+	opacity: 0.9;
+	filter: alpha(opacity=90);
+	margin-top: 20px;
+	z-index: 30000;
+}
+.v-table-header-drag .v-icon {
+	vertical-align: middle;
+}
+.v-table-scrollposition {
+	width: 160px;
+	background: #eee;
+	border: 1px solid #aaa;
+}
+.v-table-scrollposition span {
+	display: block;
+	text-align: center;
+}
+.v-table-body:focus,
+.v-table-body-wrapper:focus {
+	outline: none;
+}
+.v-table-body.focused {
+	border-color: #388ddd;
+}
+.v-table-focus .v-table-cell-content {
+	border-top: 1px dotted #0066bd;
+	border-bottom: 1px dotted #0066bd;
+}
+.v-table-focus .v-table-cell-wrapper {
+	margin-top: -1px;
+	margin-bottom: -1px;
+}
+.v-table .v-checkbox {
+	display: inline-block;
+}
