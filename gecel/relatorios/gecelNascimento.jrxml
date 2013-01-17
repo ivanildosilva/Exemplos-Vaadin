@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="gecelTodos" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="784" leftMargin="29" rightMargin="29" topMargin="20" bottomMargin="20" uuid="74da104d-fe10-4194-be47-2f915bf60ab5">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="196"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="mes" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT p.matricula,
+concat (p.nome, " ",p.sobrenome),
+DATE_FORMAT(p.nascimento,"%d/%m/%Y"),
+p.curso,
+c.telefone,
+c.celular,
+c.email
+FROM participante AS p INNER JOIN
+contato AS c ON p.matricula = c.participante
+where month(nascimento) = ($P{mes})]]>
+	</queryString>
+	<field name="matricula" class="java.lang.String"/>
+	<field name="concat (p.nome, &quot; &quot;,p.sobrenome)" class="java.lang.String"/>
+	<field name="DATE_FORMAT(p.nascimento,&quot;%d/%m/%Y&quot;)" class="java.lang.String"/>
+	<field name="curso" class="java.lang.String"/>
+	<field name="telefone" class="java.lang.String"/>
+	<field name="celular" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="124" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="2cd8eba6-58e2-4bfb-a850-d42fdab76431" x="252" y="30" width="428" height="66"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="24" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Grupo de Estudos Comércio Exterior em Logítica da Baixada Santista]]></text>
+			</staticText>
+			<image>
+				<reportElement uuid="deafc2b2-dc70-4133-889e-7f72eb1a50b0" x="0" y="0" width="148" height="121"/>
+				<imageExpression><![CDATA["C:\\ProjetoNetbeans\\gecel\\src\\br\\com\\gecel\\imagem\\logomenu.jpg"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement uuid="269681ec-ed99-4386-bca1-f53a6376d3ba" x="2" y="122" width="782" height="1"/>
+			</line>
+			<textField>
+				<reportElement uuid="c9bbde4d-e8e9-410a-a424-28b26ae54a8b" x="751" y="101" width="33" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{mes}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="79b07a65-03ad-4156-a7df-d771465615ea" x="635" y="101" width="116" height="20"/>
+				<textElement/>
+				<text><![CDATA[Aniversáriantes do mês]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="31" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="79b07a65-03ad-4156-a7df-d771465615ea" x="2" y="5" width="63" height="20"/>
+				<textElement/>
+				<text><![CDATA[Matrícula]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="e89a964e-f288-4c17-b7b0-3138315dfb31" x="2" y="30" width="782" height="1"/>
+			</line>
+			<staticText>
+				<reportElement uuid="b135e9ad-23fb-4e77-aa24-b284b8ef898e" x="72" y="5" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="f5625f8e-f532-4212-90c4-490bb8ce238d" x="278" y="5" width="75" height="20"/>
+				<textElement/>
+				<text><![CDATA[Nascimento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="0c900c0c-0193-4bfa-a9bf-77d90d024b5a" x="360" y="5" width="43" height="20"/>
+				<textElement/>
+				<text><![CDATA[Curso]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="c3bb50cc-ec2a-435b-853a-abdccb017baf" x="489" y="5" width="55" height="20"/>
+				<textElement/>
+				<text><![CDATA[Telefone]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="1d4c3a1d-d251-4562-8c18-cfca918cfc8c" x="565" y="5" width="46" height="20"/>
+				<textElement/>
+				<text><![CDATA[Celular]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="85275886-d23b-41f3-a43a-ae1147b20416" x="628" y="5" width="100" height="20"/>
+				<textElement/>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24" splitType="Stretch">
+			<textField>
+				<reportElement uuid="7a0603a4-a6d3-4818-910b-33e452b579e7" x="2" y="2" width="63" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{matricula}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="81544580-2e6a-4074-87e9-86e8fd9f6715" x="72" y="2" width="199" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{concat (p.nome, " ",p.sobrenome)}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f637dced-3d64-43d0-b790-c87cb439bf64" x="360" y="2" width="122" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{curso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="90b5c185-1802-4115-93a3-bd13e6fdc35a" x="489" y="2" width="69" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{telefone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="24c79378-a7de-4710-a6e3-073a95abc33b" x="565" y="2" width="56" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{celular}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a0481420-038d-4373-b534-4c31b4b8553b" x="628" y="2" width="156" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="08f9cf90-d92d-4478-9e2c-9cd1d92f60e6" x="278" y="2" width="75" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{DATE_FORMAT(p.nascimento,"%d/%m/%Y")}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<line>
+				<reportElement uuid="7fb0de95-8bdb-4fff-b8fc-e715c3709321" x="2" y="53" width="782" height="1"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

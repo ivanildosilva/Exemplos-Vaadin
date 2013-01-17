@@ -1,0 +1,2 @@
+﻿INSERT INTO privilegio (descricao) values ('ADMINISTADOR');
+INSERT INTO usuario (login, senha, ativo, nome ,foto,privilegio) value ('admin', 'admin', 1,'ANA LÚCIA','C:/Arquivos de programas/Fotos/ana.jpg',1);
