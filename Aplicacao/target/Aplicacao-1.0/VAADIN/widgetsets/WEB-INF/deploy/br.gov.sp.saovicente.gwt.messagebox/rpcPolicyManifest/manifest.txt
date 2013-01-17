@@ -1,0 +1,2 @@
+# Module br.gov.sp.saovicente.gwt.messagebox
+# RPC service class, partial path of RPC policy file

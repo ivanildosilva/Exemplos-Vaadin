@@ -1,0 +1,2 @@
+# Module br.gov.sp.saovicente.gwt.datefieldext
+# RPC service class, partial path of RPC policy file
